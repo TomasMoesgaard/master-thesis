@@ -31,15 +31,18 @@ public class CanonInteraction1 : MonoBehaviour
                 if (hit.collider.name == "CanonLoad")
                 {
                     AnimLoad.SetTrigger("Open");
+                    print("Opening The cannon");
                 }
             }
             if (AnimLoad.GetCurrentAnimatorStateInfo(0).IsName("Open"))
             {
                 AnimLoad.SetTrigger("Close");
+                print("Closing the cannon!");
             }
             if (AnimLoad.GetCurrentAnimatorStateInfo(0).IsName("Close"))
             {
                 AnimLoad.SetTrigger("ReadyToFire");
+                print("ready to fire!!!!!");
             }
 
             if (Physics.Raycast(ray, out hit))
@@ -47,13 +50,16 @@ public class CanonInteraction1 : MonoBehaviour
                 if (hit.collider.name == "CanonTube")
                 {
                     AnimFire.SetTrigger("FireCanon");
+                    print("Fire!");
                 }
+            }
                 if (AnimLoad.GetCurrentAnimatorStateInfo(0).IsName("Fire"))
                 {
-                    AnimLoad.SetTrigger("CanonFired");
+                AnimLoad.SetTrigger("CanonFired");
+                print("Fired");
                 }
 
-            }
+            
 
         }
     }
